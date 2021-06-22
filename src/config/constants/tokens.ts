@@ -12,6 +12,15 @@ const tokens = {
     decimals: 18,
     projectLink: 'https://pancakeswap.finance/',
   },
+  l23b: {
+    symbol: '123b',
+    address: {
+      56: '0xe484CDBAC2C220BE60cDAeDe794FDeFD425B6B0B',
+      97: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
+    },
+    decimals: 18,
+    projectLink: 'https://123swap.finance/',
+  },
   txl: {
     symbol: 'TXL',
     address: {
@@ -574,6 +583,15 @@ const tokens = {
     symbol: 'SYRUP',
     address: {
       56: '0x009cF7bC57584b7998236eff51b98A168DceA9B0',
+      97: '0xfE1e507CeB712BDe086f3579d2c03248b2dB77f9',
+    },
+    decimals: 18,
+    projectLink: 'https://pancakeswap.finance/',
+  },
+  l23s: {
+    symbol: '123S',
+    address: {
+      56: '0xFE3d200446931A2B0E614b412428df581CC886F0',
       97: '0xfE1e507CeB712BDe086f3579d2c03248b2dB77f9',
     },
     decimals: 18,

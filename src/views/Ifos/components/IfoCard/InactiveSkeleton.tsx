@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Skeleton } from '@pancakeswap-libs/uikit'
+import { Box, Flex, Skeleton } from '@123swap/uikit'
 
 const InactiveSkeleton = () => (
   <>

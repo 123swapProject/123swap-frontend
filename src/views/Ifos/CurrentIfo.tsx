@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Heading, BaseLayout, Button, LinkExternal, Flex, Image } from '@pancakeswap-libs/uikit'
+import { Text, Heading, BaseLayout, Button, LinkExternal, Flex, Image } from '@123swap/uikit'
 import { ifosConfig } from 'config/constants'
 import useI18n from 'hooks/useI18n'
 import IfoCard from './components/IfoCard'
@@ -85,7 +85,7 @@ const Ifo = () => {
             <Text mb={3}>
               {TranslateString(
                 514,
-                'Launch your project with PancakeSwap, Binance Smart Chain’s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on BSC.',
+                'Launch your project with 123swap, Binance Smart Chain’s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on BSC.',
               )}
             </Text>
             <Button

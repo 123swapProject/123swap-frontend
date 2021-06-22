@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import BigNumber from 'bignumber.js'
-import { Card, CardBody, Heading, Text } from '@pancakeswap-libs/uikit'
+import { Card, CardBody, Heading, Text } from '@123swap/uikit'
 import { useWeb3React } from '@web3-react/core'
 import useI18n from 'hooks/useI18n'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
@@ -65,7 +65,7 @@ const Mint: React.FC = () => {
       <Text as="p">{TranslateString(786, 'Every profile starts by making a “starter” collectible (NFT).')}</Text>
       <Text as="p">{TranslateString(788, 'This starter will also become your first profile picture.')}</Text>
       <Text as="p" mb="24px">
-        {TranslateString(790, 'You can change your profile pic later if you get another approved Pancake Collectible.')}
+        {TranslateString(790, 'You can change your profile pic later if you get another approved 123swap Collectible.')}
       </Text>
       <Card mb="24px">
         <CardBody>

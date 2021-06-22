@@ -3,7 +3,7 @@ import { Route, useRouteMatch, useLocation } from 'react-router-dom'
 import { useAppDispatch } from 'state'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
-import { Image, Heading, RowType, Toggle, Text } from '@pancakeswap-libs/uikit'
+import { Image, Heading, RowType, Toggle, Text } from '@123swap/uikit'
 import styled from 'styled-components'
 import FlexLayout from 'components/layout/Flex'
 import Page from 'components/layout/Page'
@@ -346,7 +346,6 @@ const Farms: React.FC = () => {
           </FilterContainer>
         </ControlContainer>
         {renderContent()}
-        <StyledImage src="/images/3dpan.png" alt="Pancake illustration" width={120} height={103} />
       </Page>
     </>
   )

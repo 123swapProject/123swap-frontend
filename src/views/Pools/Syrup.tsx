@@ -3,7 +3,7 @@ import { Route, useRouteMatch } from 'react-router-dom'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { useWeb3React } from '@web3-react/core'
-import { Heading } from '@pancakeswap-libs/uikit'
+import { Heading } from '@123swap/uikit'
 import orderBy from 'lodash/orderBy'
 import partition from 'lodash/partition'
 import useI18n from 'hooks/useI18n'
@@ -45,7 +45,6 @@ const Farm: React.FC = () => {
             <li>{TranslateString(406, 'Rewards are calculated per block.')}</li>
           </ul>
         </div>
-        <img src="/images/syrup.png" alt="SYRUP POOL icon" width={410} height={191} />
       </Hero>
       <PoolTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <Divider />

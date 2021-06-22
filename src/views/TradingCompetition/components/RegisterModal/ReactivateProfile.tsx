@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, Button, Text } from '@pancakeswap-libs/uikit'
+import { Heading, Button, Text } from '@123swap/uikit'
 import history from 'routerHistory'
 import useI18n from 'hooks/useI18n'
 import { CompetitionProps } from 'views/TradingCompetition/types'
@@ -20,7 +20,7 @@ const ReactivateProfile: React.FC<CompetitionProps> = ({ onDismiss }) => {
       <Text color="textSubtle">
         {TranslateString(
           999,
-          'It looks like you’ve disabled your account by removing your Pancake Collectible (NFT) profile picture.',
+          'It looks like you’ve disabled your account by removing your 123swap Collectible (NFT) profile picture.',
         )}
       </Text>
       <Text>

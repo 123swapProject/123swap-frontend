@@ -1,5 +1,5 @@
 {
-  "name": "pancake-frontend",
+  "name": "123swap-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,12 +12,6 @@
     "format:check": "prettier --check --loglevel error 'src/**/*.{js,jsx,ts,tsx}'",
     "format:write": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "generate:config": "ts-node --compiler-options '{\"module\":\"commonjs\"}' scripts/generateConfig"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn format:check",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "browserslist": {
     "production": [
@@ -32,10 +26,10 @@
     ]
   },
   "dependencies": {
+    "@123swap/uikit": "^0.23.3",
     "@binance-chain/bsc-connector": "^1.0.0",
     "@crowdin/crowdin-api-client": "^1.10.4",
     "@ethersproject/abi": "^5.0.7",
-    "@pancakeswap-libs/uikit": "^0.24.0",
     "@reduxjs/toolkit": "^1.5.0",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",

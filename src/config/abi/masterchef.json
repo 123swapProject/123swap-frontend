@@ -352,7 +352,7 @@
         "type": "address"
       }
     ],
-    "name": "pendingCake",
+    "name": "pendingBonus",
     "outputs": [
       {
         "internalType": "uint256",
