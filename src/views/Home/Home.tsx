@@ -14,7 +14,6 @@ import LeadInBanner from 'views/TradingCompetition/components/LeadInBanner'
 
 const Hero = styled.div`
   align-items: center;
-  background-image: url('/images/pan-bg-mobile.svg');
   background-repeat: no-repeat;
   background-position: top center;
   display: flex;
@@ -26,7 +25,6 @@ const Hero = styled.div`
   text-align: center;
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    background-image: url('/images/pan-bg2.svg'), url('/images/pan-bg.svg');
     background-position: left center, right center;
     height: 165px;
     padding-top: 0;
@@ -82,13 +80,12 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <LeadInBanner />
       <Page>
         <Hero>
           <Heading as="h1" size="xl" mb="24px" color="secondary">
             {TranslateString(576, '123swap')}
           </Heading>
-          <Text>{TranslateString(578, 'The #1 AMM and yield farm on Binance Smart Chain.')}</Text>
+          <Text>{TranslateString(578, 'The #123 AMM and yield farm on Binance Smart Chain.')}</Text>
         </Hero>
         <div>
           <Cards>

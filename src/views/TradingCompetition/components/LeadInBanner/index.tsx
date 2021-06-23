@@ -18,7 +18,6 @@ const Container = styled(PageContainer)`
   text-align: center;
 
   ${({ theme }) => theme.mediaQueries.md} {
-    background: url(${allBunniesImageClipped}) no-repeat bottom right 24px;
     text-align: left;
   }
 `
