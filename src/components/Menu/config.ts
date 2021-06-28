@@ -12,11 +12,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'https://exchange.pancakeswap.finance',
+        href: 'https://exchange.123swap.finance',
       },
       {
         label: 'Liquidity',
-        href: 'https://exchange.pancakeswap.finance/#/pool',
+        href: 'https://exchange.123swap.finance/#/pool',
       },
     ],
   },
@@ -73,19 +73,19 @@ const config: MenuEntry[] = [
   //   items: [
   //     {
   //       label: 'Overview',
-  //       href: 'https://pancakeswap.info',
+  //       href: 'https://info.123swap.finance',
   //     },
   //     {
   //       label: 'Tokens',
-  //       href: 'https://pancakeswap.info/tokens',
+  //       href: 'https://info.123swap.finance/tokens',
   //     },
   //     {
   //       label: 'Pairs',
-  //       href: 'https://pancakeswap.info/pairs',
+  //       href: 'https://info.123swap.finance/pairs',
   //     },
   //     {
   //       label: 'Accounts',
-  //       href: 'https://pancakeswap.info/accounts',
+  //       href: 'https://info.123swap.finance/accounts',
   //     },
   //   ],
   // },

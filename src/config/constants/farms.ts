@@ -22,16 +22,16 @@ const farms: FarmConfig[] = [
   //   token: tokens.cake,
   //   quoteToken: tokens.wbnb,
   // },
-  //   {
-  //   pid: 2,
-  //   lpSymbol: 'BUSD-BNB LP',
-  //   lpAddresses: {
-  //     97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-  //     56: '0x1b96b92314c44b159149f7e0303511fb2fc4774f',
-  //   },
-  //   token: tokens.busd,
-  //   quoteToken: tokens.wbnb,
-  // },
+    {
+    pid: 2,
+    lpSymbol: 'USDT-BNB LP',
+    lpAddresses: {
+      97: '0xb6c6e2763dced1f769958840a3edd7c36ffa05bd',
+      56: '0xb6c6e2763dced1f769958840a3edd7c36ffa05bd',
+    },
+    token: tokens.usdt,
+    quoteToken: tokens.wbnb,
+  },
 ]
 
 export default farms

@@ -113,7 +113,7 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({ details, apr, 
   })
   const lpAddress = farm.lpAddresses[process.env.REACT_APP_CHAIN_ID]
   const bsc = `https://bscscan.com/address/${lpAddress}`
-  const info = `https://pancakeswap.info/pair/${lpAddress}`
+  const info = `https://info.123swap.finance/pair/${lpAddress}`
   const isCommunityFarm = communityFarms.includes(token.symbol)
 
   return (
@@ -121,7 +121,7 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({ details, apr, 
       <InfoContainer>
         {isActive && (
           <StakeContainer>
-            <StyledLinkExternal href={`https://exchange.pancakeswap.finance/#/add/${liquidityUrlPathParts}`}>
+            <StyledLinkExternal href={`https://exchange.123swap.finance/#/add/${liquidityUrlPathParts}`}>
               {TranslateString(999, `Get ${lpLabel}`, { name: lpLabel })}
             </StyledLinkExternal>
           </StakeContainer>
