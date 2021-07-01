@@ -6,8 +6,8 @@ const farms: FarmConfig[] = [
     pid: 0,
     lpSymbol: 'CAKE',
     lpAddresses: {
-      97: '0xe484CDBAC2C220BE60cDAeDe794FDeFD425B6B0B',
-      56: '0xe484CDBAC2C220BE60cDAeDe794FDeFD425B6B0B',
+      97: '0x843819dF7e79C48C5F9Ca84e371c1B4464AB77BD',
+      56: '0x843819dF7e79C48C5F9Ca84e371c1B4464AB77BD',
     },
     token: tokens.syrup,
     quoteToken: tokens.syrup,

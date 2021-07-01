@@ -15,7 +15,7 @@ const tokens = {
   l23b: {
     symbol: '123b',
     address: {
-      56: '0xe484CDBAC2C220BE60cDAeDe794FDeFD425B6B0B',
+      56: '0x843819dF7e79C48C5F9Ca84e371c1B4464AB77BD',
       97: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
     },
     decimals: 18,
@@ -591,7 +591,7 @@ const tokens = {
   l23s: {
     symbol: '123S',
     address: {
-      56: '0xFE3d200446931A2B0E614b412428df581CC886F0',
+      56: '0x6A09d77aFca5aAC205a0B7f87e22C8364fb600b7',
       97: '0xfE1e507CeB712BDe086f3579d2c03248b2dB77f9',
     },
     decimals: 18,

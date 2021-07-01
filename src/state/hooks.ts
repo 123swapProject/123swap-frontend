@@ -208,7 +208,7 @@ export const usePriceCakeBusd = (): BigNumber => {
 
   const bnbBusdPrice = bnbBusdFarm !== undefined && bnbBusdFarm.tokenPriceVsQuote !== undefined ? new BigNumber(1).div(bnbBusdFarm.tokenPriceVsQuote) : ZERO
   const cakeBusdPrice = cakeBnbFarm  !== undefined && cakeBnbFarm.tokenPriceVsQuote !== undefined  ? bnbBusdPrice.times(cakeBnbFarm.tokenPriceVsQuote) : ZERO
-
+  return new BigNumber(0.123)
   return cakeBusdPrice
 }
 
