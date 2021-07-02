@@ -23,7 +23,7 @@ const TokenInput: React.FC<TokenInputProps> = ({ max, symbol, onChange, onSelect
       <Flex alignItems="center">
         <Input onChange={onChange} placeholder="0" value={value} />
         <Flex alignItems="center">
-          <Text bold color="primary" textTransform="uppercase" mx="8px">
+          <Text bold color="primary" mx="8px">
             {symbol}
           </Text>
           <div>
