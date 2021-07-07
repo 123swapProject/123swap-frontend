@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Image, Button } from '@123swap/uikit'
+import { Image, Button, LogoIcon } from '@123swap/uikit'
 import { CommunityTag } from 'components/Tags'
 import useI18n from 'hooks/useI18n'
 import Card from './Card'
@@ -43,7 +43,7 @@ const Coming: React.FC = () => {
             👀
           </span>
         </CardTitle>
-        <Image src="" width={64} height={64} alt="Your project here" />
+        <LogoIcon width="64px" height="64px"/>
         <Balance>???</Balance>
         <Label>{TranslateString(416, 'Create a pool for your token')}</Label>
         <Button
@@ -56,23 +56,8 @@ const Coming: React.FC = () => {
         >
           {TranslateString(418, 'Apply Now')}
         </Button>
-        <DetailPlaceholder>
-          <div style={{ flex: 1 }}>{TranslateString(736, 'APR')}:</div>
-          <Value>??</Value>
-        </DetailPlaceholder>
-        <DetailPlaceholder>
-          <div style={{ flex: 1 }}>
-            <span role="img" aria-label="syrup">
-              🥞{' '}
-            </span>
-            {TranslateString(384, 'Your Stake')}:
-          </div>
-          <Value>??? 123b</Value>
-        </DetailPlaceholder>
       </div>
-      <Footer>
-        <CommunityTag />
-      </Footer>
+      <Footer/>
     </Card>
   )
 }
