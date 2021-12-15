@@ -47,6 +47,7 @@ const StyledButtonMenuWrapper = styled.div`
     padding: 0px 10px;
     height: 24px;
     border-radius: 50px;
+    border: 0 !important;
   }
 `
 
