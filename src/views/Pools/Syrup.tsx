@@ -3,7 +3,7 @@ import { Route, useRouteMatch } from 'react-router-dom'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { useWeb3React } from '@web3-react/core'
-import { Heading } from '@123swap/uikit'
+import { Heading, Text } from '@123swap/uikit'
 import orderBy from 'lodash/orderBy'
 import partition from 'lodash/partition'
 import useI18n from 'hooks/useI18n'
@@ -31,38 +31,56 @@ const Farm: React.FC = () => {
     () => openPools.filter((pool) => pool.userData && new BigNumber(pool.userData.stakedBalance).isGreaterThan(0)),
     [openPools],
   )
+  const TextWrapper = styled.div`
+    width: 450px;
+  `
+  const StyledBodyWrapper = styled.div`
+    background: ${({ theme }) => theme.colors.secondBackground};
+    border: solid 1px ${({ theme }) => theme.colors.borderColor};
+    border-radius: 16px;
+    padding: 40px;
+  `
+  const StyledFlexLayout = styled(FlexLayout)`
+    justify-content: start;
+    flex-wrap: wrap;
+    & > * {
+      min-width: 220px;
+      max-width: 25%;
+      margin: 0 5px;
+      margin-bottom: 0px;
+  }
+  `
 
   return (
-    <Page>
+    <Page style={{maxWidth: "760px"}}>
       <Hero>
-        <div>
-          <Heading as="h1" size="xxl" mb="16px">
+        <TextWrapper>
+          <Heading as="h1" size="lg" color="text" mb="5px" mt="50px">
             {TranslateString(738, 'Pool')}
           </Heading>
-          <ul>
-            <li>{TranslateString(580, 'Stake 123b to earn new tokens.')}</li>
-            <li>{TranslateString(486, 'You can unstake at any time.')}</li>
-            <li>{TranslateString(406, 'Rewards are calculated per block.')}</li>
-          </ul>
-        </div>
+            <Text>{TranslateString(580, 'Stake 123b to earn new tokens. ')}{TranslateString(486, 'You can unstake at any time.')}</Text>
+            <Text>{TranslateString(406, 'Rewards are calculated per block.')}</Text>
+        </TextWrapper>
       </Hero>
-      <PoolTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
-      <Divider />
-      <FlexLayout>
-        <Route exact path={`${path}`}>
-          <>
-            {stakedOnly
-              ? orderBy(stakedOnlyPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)
-              : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
-            <Coming />
-          </>
-        </Route>
-        <Route path={`${path}/history`}>
-          {orderBy(finishedPools, ['sortOrder']).map((pool) => (
-            <PoolCard key={pool.sousId} pool={pool} />
-          ))}
-        </Route>
-      </FlexLayout>
+      <StyledBodyWrapper>
+        <PoolTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
+        <Divider />
+        <StyledFlexLayout>
+          <Route exact path={`${path}`}>
+            <>
+              {stakedOnly
+                ? orderBy(stakedOnlyPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)
+                : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
+              <Coming />
+            </>
+          </Route>
+          <Route path={`${path}/history`}>
+            {orderBy(finishedPools, ['sortOrder']).map((pool) => (
+              <PoolCard key={pool.sousId} pool={pool} />
+            ))}
+          </Route>
+        </StyledFlexLayout>
+      </StyledBodyWrapper>
     </Page>
   )
 }
@@ -76,7 +94,7 @@ const Hero = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 250px;
-  padding: 48px 0;
+  padding: 35px 0;
   ul {
     margin: 0;
     padding: 0;

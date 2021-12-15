@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useFarmUser } from 'state/hooks'
 import useI18n from 'hooks/useI18n'
-import { Text, Image } from '@123swap/uikit'
+import { Text } from '@123swap/uikit'
 import { getBalanceNumber } from 'utils/formatBalance'
 
 export interface FarmProps {
@@ -11,27 +11,14 @@ export interface FarmProps {
   image: string
 }
 
-const IconImage = styled(Image)`
-  width: 24px;
-  height: 24px;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    width: 40px;
-    height: 40px;
-  }
-`
 
 const Container = styled.div`
-  padding-left: 16px;
   display: flex;
   align-items: center;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    padding-left: 32px;
-  }
+  padding: 10px 0;
 `
 
-const Farm: React.FunctionComponent<FarmProps> = ({ image, label, pid }) => {
+const Farm: React.FunctionComponent<FarmProps> = ({ label, pid }) => {
   const { stakedBalance } = useFarmUser(pid)
   const TranslateString = useI18n()
   const rawStakedBalance = getBalanceNumber(stakedBalance)
@@ -50,10 +37,10 @@ const Farm: React.FunctionComponent<FarmProps> = ({ image, label, pid }) => {
 
   return (
     <Container>
-      <IconImage src={`/images/farms/${image}.svg`} alt="icon" width={40} height={40} mr="8px" />
+      {/* <IconImage src={`/images/farms/${image}.svg`} alt="icon" width={40} height={40} mr="8px" /> */}
       <div>
         {handleRenderFarming()}
-        <Text bold>{label}</Text>
+        <Text bold fontSize="14px">{label}</Text>
       </div>
     </Container>
   )

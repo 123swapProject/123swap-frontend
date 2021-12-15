@@ -62,6 +62,19 @@ const Staked: React.FunctionComponent<FarmWithStakedValue> = ({ pid, lpSymbol, l
     }
   }, [onApprove])
 
+  const StyledButton = styled(Button)`
+    height: 28px; 
+    padding: 0 30px;
+    border-radius: 4px;
+  `
+  const StyledActionContainer = styled(ActionContainer)`
+  border: solid 1px ${({ theme }) => theme.colors.textMenu};
+  border-radius: 8px;
+  padding: 8px;
+  margin-left: 10px;
+  height: 70px;
+`
+
   if (!account) {
     return (
       <ActionContainer>
@@ -88,10 +101,10 @@ const Staked: React.FunctionComponent<FarmWithStakedValue> = ({ pid, lpSymbol, l
               <Earned>{displayBalance}</Earned>
             </div>
             <IconButtonWrapper>
-              <IconButton variant="secondary" onClick={onPresentWithdraw} mr="6px">
+              <IconButton variant="primary" onClick={onPresentWithdraw} mr="6px">
                 <MinusIcon color="primary" width="14px" />
               </IconButton>
-              <IconButton variant="secondary" onClick={onPresentDeposit}>
+              <IconButton variant="primary" onClick={onPresentDeposit}>
                 <AddIcon color="primary" width="14px" />
               </IconButton>
             </IconButtonWrapper>
@@ -107,7 +120,7 @@ const Staked: React.FunctionComponent<FarmWithStakedValue> = ({ pid, lpSymbol, l
           <Title>{lpSymbol}</Title>
         </ActionTitles>
         <ActionContent>
-          <Button width="100%" onClick={onPresentDeposit} variant="secondary">
+          <Button width="100%" onClick={onPresentDeposit} variant="primary">
             {TranslateString(999, 'Stake LP')}
           </Button>
         </ActionContent>
@@ -116,16 +129,16 @@ const Staked: React.FunctionComponent<FarmWithStakedValue> = ({ pid, lpSymbol, l
   }
 
   return (
-    <ActionContainer>
+    <StyledActionContainer>
       <ActionTitles>
         <Subtle>{TranslateString(999, 'ENABLE FARM')}</Subtle>
       </ActionTitles>
       <ActionContent>
-        <Button width="100%" disabled={requestedApproval} onClick={handleApprove} variant="secondary">
+        <StyledButton width="100%" disabled={requestedApproval} onClick={handleApprove} variant="primary">
           {TranslateString(999, 'Enable')}
-        </Button>
+        </StyledButton>
       </ActionContent>
-    </ActionContainer>
+    </StyledActionContainer>
   )
 }
 

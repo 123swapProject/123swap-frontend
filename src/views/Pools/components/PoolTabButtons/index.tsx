@@ -11,17 +11,19 @@ const PoolTabButtons = ({ stakedOnly, setStakedOnly }) => {
   return (
     <Wrapper>
       <ToggleWrapper>
-        <Toggle checked={stakedOnly} onChange={() => setStakedOnly(!stakedOnly)} />
-        <Text> {TranslateString(999, 'Staked only')}</Text>
+        <Toggle scale="sm" checked={stakedOnly} onChange={() => setStakedOnly(!stakedOnly)} />
+        <Text color="textMenu" style={{fontSize: "14px"}}> {TranslateString(999, 'Staked only')}</Text>
       </ToggleWrapper>
-      <ButtonMenu activeIndex={isExact ? 0 : 1} scale="sm" variant="subtle">
-        <ButtonMenuItem as={Link} to={`${url}`}>
-          {TranslateString(1198, 'Live')}
-        </ButtonMenuItem>
-        <ButtonMenuItem as={Link} to={`${url}/history`}>
-          {TranslateString(388, 'Finished')}
-        </ButtonMenuItem>
-      </ButtonMenu>
+      <StyledButtonMenuWrapper>
+        <ButtonMenu activeIndex={isExact ? 0 : 1} scale="sm" variant="subtle">
+          <ButtonMenuItem as={Link} to={`${url}`}>
+            {TranslateString(1198, 'Live')}
+          </ButtonMenuItem>
+          <ButtonMenuItem as={Link} to={`${url}/history`}>
+            {TranslateString(388, 'Finished')}
+          </ButtonMenuItem>
+        </ButtonMenu>
+      </StyledButtonMenuWrapper>
     </Wrapper>
   )
 }
@@ -33,6 +35,19 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 32px;
+`
+
+const StyledButtonMenuWrapper = styled.div`
+  background: ${({ theme }) => theme.colors.inputSecondary};
+  border-radius: 50px;
+  padding: 2px;
+  & a {
+    color: ${({ theme }) => theme.colors.textMenu};
+    font-size: 14px;
+    padding: 0px 10px;
+    height: 24px;
+    border-radius: 50px;
+  }
 `
 
 const ToggleWrapper = styled.div`

@@ -37,4 +37,16 @@ const Wrapper = styled.div`
   ${({ theme }) => theme.mediaQueries.sm} {
     margin-left: 16px;
   }
+  & div {
+    background: ${({ theme }) => theme.colors.inputSecondary};
+    border-radius: 50px;
+    padding: 2px;
+  }
+  & a {
+    color: ${({ theme }) => theme.colors.textMenu};
+    font-size: 14px;
+    padding: 0px 10px;
+    height: 24px;
+    border-radius: 50px;
+  }
 `

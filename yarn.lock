@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@123swap/uikit@^0.23.2":
-  version "0.23.2"
-  resolved "https://registry.yarnpkg.com/@123swap/uikit/-/uikit-0.23.2.tgz#ca13285e729ecffb8f03379ee8819e8aa9788c0a"
-  integrity sha512-NZsSUnBELurcsJNR5mmCb8v0/Fd3Tr07gqWh8q7vkJZnTEesq1i9YCFqVbw5bHoI3XSbPkEzvMt4Yu1i+18k1Q==
+"@123swap/uikit@^0.23.6":
+  version "0.23.47"
+  resolved "https://registry.yarnpkg.com/@123swap/uikit/-/uikit-0.23.47.tgz#058105602f8fdf1129210d9b98b9153fe0cd7311"
+  integrity sha512-B8lLnAlPUn1Eb/dN+x97/VoHW1Dra/jH1WU4v8QFkEaX5+/Kv6yX2UFcuRwkE4u1f1E+7Q5lfG4cTvbng7zvBw==
   dependencies:
     "@types/lodash" "^4.14.168"
     "@types/styled-system" "^5.1.10"
