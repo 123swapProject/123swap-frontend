@@ -32,7 +32,9 @@ const Farm: React.FC = () => {
     [openPools],
   )
   const TextWrapper = styled.div`
-    width: 450px;
+    ${({ theme }) => theme.mediaQueries.sm} {
+      width: 450px;
+    }
   `
   const StyledBodyWrapper = styled.div`
     background: ${({ theme }) => theme.colors.secondBackground};
@@ -48,6 +50,11 @@ const Farm: React.FC = () => {
       max-width: 25%;
       margin: 0 5px;
       margin-bottom: 0px;
+    @media (max-width: 576px) {
+      min-width: auto;
+      max-width: none;
+    }
+      
   }
   `
 
@@ -91,19 +98,10 @@ const Hero = styled.div`
   display: grid;
   grid-gap: 32px;
   grid-template-columns: 1fr;
-  margin-left: auto;
-  margin-right: auto;
   max-width: 250px;
   padding: 35px 0;
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    font-size: 16px;
-    li {
-      margin-bottom: 4px;
-    }
-  }
+  padding-top: 0;
+
   img {
     height: auto;
     max-width: 100%;
