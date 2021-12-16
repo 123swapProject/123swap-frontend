@@ -5,6 +5,7 @@ const Label = styled.div`
   font-size: 12px;
   color: ${({ theme }) => theme.colors.textSubtle};
   text-align: left;
+  padding-bottom: 5px;
 `
 
 const ContentContainer = styled.div`

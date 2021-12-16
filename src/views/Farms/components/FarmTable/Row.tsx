@@ -33,11 +33,12 @@ const cells = {
 }
 
 const CellInner = styled.div`
-  padding: 24px 0px;
+  padding: 10px 0px;
   display: flex;
   width: 100%;
   align-items: center;
   padding-right: 8px;
+  border-bottom: solid 1px ${({ theme }) => theme.colors.borderColor};
 
   ${({ theme }) => theme.mediaQueries.xl} {
     padding-right: 32px;
@@ -46,7 +47,6 @@ const CellInner = styled.div`
 
 const StyledTr = styled.tr`
   cursor: pointer;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.borderColor};
 `
 
 const EarnedMobileCell = styled.td`

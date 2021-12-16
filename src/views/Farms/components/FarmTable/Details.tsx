@@ -12,7 +12,10 @@ const Container = styled.div`
   width: 100%;
   justify-content: flex-end;
   padding-right: 8px;
-  color: ${({ theme }) => theme.colors.primary};
+  padding: 10px 0;
+  background: ${({ theme }) => theme.colors.gradients.linear};
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     padding-right: 0px;

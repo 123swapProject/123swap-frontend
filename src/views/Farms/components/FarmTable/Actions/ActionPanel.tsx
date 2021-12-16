@@ -25,11 +25,11 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column-reverse;
-  padding: 24px;
+  padding: 14px;
 
   ${({ theme }) => theme.mediaQueries.lg} {
     flex-direction: row;
-    padding: 16px 32px;
+    padding: 16px;
   }
 `
 

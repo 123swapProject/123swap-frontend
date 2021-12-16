@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useWeb3React } from '@web3-react/core'
+import styled from 'styled-components'
 import { Button } from '@123swap/uikit'
 import BigNumber from 'bignumber.js'
 import { FarmWithStakedValue } from 'views/Farms/components/FarmCard/FarmCard'
@@ -42,8 +43,21 @@ const HarvestAction: React.FunctionComponent<FarmWithStakedValue> = ({ pid, user
     updateValue.current(earningsBusd)
   }, [earningsBusd, updateValue])
 
+  const StyledButton = styled(Button)`
+    height: 28px; 
+    padding: 0 30px;
+    background: ${({ theme }) => theme.colors.textMenu};
+    border-radius: 4px;
+  `
+  const StyledActionContainer = styled(ActionContainer)`
+    border: solid 1px ${({ theme }) => theme.colors.textMenu};
+    border-radius: 8px;
+    padding: 8px;
+    margin-left: 0;
+  `
+
   return (
-    <ActionContainer>
+    <StyledActionContainer>
       <ActionTitles>
         <Title>123b </Title>
         <Subtle>{TranslateString(1072, 'EARNED')}</Subtle>
@@ -51,9 +65,9 @@ const HarvestAction: React.FunctionComponent<FarmWithStakedValue> = ({ pid, user
       <ActionContent>
         <div>
           <Earned>{displayBalance}</Earned>
-          <Staked>~{countUp}USD</Staked>
+          <Staked>~{countUp}$</Staked>
         </div>
-        <Button
+        <StyledButton
           disabled={!earnings || pendingTx || !account}
           onClick={async () => {
             setPendingTx(true)
@@ -63,9 +77,9 @@ const HarvestAction: React.FunctionComponent<FarmWithStakedValue> = ({ pid, user
           ml="4px"
         >
           {TranslateString(562, 'Harvest')}
-        </Button>
+        </StyledButton>
       </ActionContent>
-    </ActionContainer>
+    </StyledActionContainer>
   )
 }
 

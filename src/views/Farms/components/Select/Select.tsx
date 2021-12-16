@@ -1,27 +1,26 @@
 import React, { useState, useRef, useEffect } from 'react'
 import styled, { css } from 'styled-components'
-import { ArrowDropDownIcon, Text } from '@123swap/uikit'
+import { ChevronDownIcon, Text } from '@123swap/uikit'
 
 const DropDownHeader = styled.div`
   width: 100%;
-  height: 40px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0px 16px;
   box-shadow: ${({ theme }) => theme.shadows.inset};
   border: 1px solid ${({ theme }) => theme.colors.inputSecondary};
-  border-radius: 16px;
-  background: ${({ theme }) => theme.colors.input};
+  border-radius: 4px;
+  background: ${({ theme }) => theme.colors.inputSecondary};
   transition: border-radius 0.15s;
 `
 
 const DropDownListContainer = styled.div`
-  min-width: 136px;
   height: 0;
   position: absolute;
   overflow: hidden;
-  background: ${({ theme }) => theme.colors.input};
+  background: ${({ theme }) => theme.colors.inputSecondary};
   z-index: ${({ theme }) => theme.zIndices.dropdown};
   transition: transform 0.15s, opacity 0.15s;
   transform: scaleY(0);
@@ -29,7 +28,7 @@ const DropDownListContainer = styled.div`
   opacity: 0;
 
   ${({ theme }) => theme.mediaQueries.sm} {
-    min-width: 168px;
+    min-width: 88px;
   }
 `
 
@@ -37,40 +36,39 @@ const DropDownContainer = styled.div<{ isOpen: boolean; width: number; height: n
   cursor: pointer;
   width: ${({ width }) => width}px;
   position: relative;
-  background: ${({ theme }) => theme.colors.input};
-  border-radius: 16px;
-  height: 40px;
-  min-width: 136px;
+  background: ${({ theme }) => theme.colors.inputSecondary};
+  border-radius: 4px;
+  height: 28px;
+  min-width: 88px;
+  margin-right: 8px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
-    min-width: 168px;
+    min-width: 88px;
   }
 
   ${(props) =>
     props.isOpen &&
     css`
       ${DropDownHeader} {
-        border-bottom: 1px solid ${({ theme }) => theme.colors.inputSecondary};
-        box-shadow: ${({ theme }) => theme.tooltip.boxShadow};
-        border-radius: 16px 16px 0 0;
+        border-radius: 4px 4px 0 0;
       }
 
       ${DropDownListContainer} {
         height: auto;
         transform: scaleY(1);
         opacity: 1;
-        border: 1px solid ${({ theme }) => theme.colors.inputSecondary};
+        width: 100%;
         border-top-width: 0;
-        border-radius: 0 0 16px 16px;
-        box-shadow: ${({ theme }) => theme.tooltip.boxShadow};
+        border-radius: 0 0 4px 4px;
       }
     `}
 
   svg {
     position: absolute;
-    right: 16px;
+    right: 5px;
     top: 50%;
     transform: translateY(-50%);
+    width: 15px;
   }
 `
 
@@ -131,7 +129,7 @@ const Select: React.FunctionComponent<SelectProps> = ({ options, onChange }) => 
           <Text>{selectedOption.label}</Text>
         </DropDownHeader>
       )}
-      <ArrowDropDownIcon color="text" onClick={toggling} />
+      <ChevronDownIcon color="text" onClick={toggling} />
       <DropDownListContainer>
         <DropDownList ref={dropdownRef}>
           {options.map((option) =>
