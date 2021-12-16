@@ -1,28 +1,36 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Tag, VerifiedIcon, CommunityIcon, BinanceIcon } from '@123swap/uikit'
 
+const StyledTag = styled(Tag)`
+  border: solid 1px #EB5757;
+  color: #EB5757;
+  font-size: 10px;
+`
+
+
 const CoreTag = (props) => (
-  <Tag variant="secondary" outline startIcon={<VerifiedIcon color="secondary" />} {...props}>
+  <StyledTag variant="secondary" outline startIcon={<VerifiedIcon color="#EB5757" />} {...props}>
     Core
-  </Tag>
+  </StyledTag>
 )
 
 const CommunityTag = (props) => (
-  <Tag variant="textSubtle" outline startIcon={<CommunityIcon color="secondary" />} {...props}>
+  <StyledTag variant="textSubtle" outline startIcon={<CommunityIcon color="#EB5757" />} {...props}>
     Community
-  </Tag>
+  </StyledTag>
 )
 
 const BinanceTag = (props) => (
-  <Tag variant="binance" outline startIcon={<BinanceIcon color="secondary" />} {...props}>
+  <StyledTag variant="binance" outline startIcon={<BinanceIcon color="#EB5757" />} {...props}>
     Binance
-  </Tag>
+  </StyledTag>
 )
 
 const DualTag = (props) => (
-  <Tag variant="textSubtle" outline {...props}>
+  <StyledTag variant="textSubtle" outline {...props}>
     Dual
-  </Tag>
+  </StyledTag>
 )
 
 export { CoreTag, CommunityTag, BinanceTag, DualTag }

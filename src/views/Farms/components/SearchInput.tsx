@@ -3,14 +3,16 @@ import { Input } from '@123swap/uikit'
 import styled from 'styled-components'
 
 const StyledInput = styled(Input)`
-  border-radius: 16px;
+  border-radius: 4px;
+  background: ${({ theme }) => theme.colors.inputSecondary};
   margin-left: auto;
+  height: 28px;
 `
 
 const InputWrapper = styled.div`
   position: relative;
   ${({ theme }) => theme.mediaQueries.sm} {
-    width: 234px;
+    width: 123px;
     display: block;
   }
 `
@@ -33,7 +35,7 @@ const SearchInput: React.FC<Props> = ({ value, onChange }) => {
           ref={inputEl}
           value={value}
           onChange={onChange}
-          placeholder="Search farms"
+          placeholder="Search"
           onBlur={() => setToggled(false)}
         />
       </InputWrapper>

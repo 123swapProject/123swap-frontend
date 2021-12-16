@@ -13,7 +13,7 @@ import WinCard from 'views/Home/components/WinCard'
 import LeadInBanner from 'views/TradingCompetition/components/LeadInBanner'
 
 const Hero = styled.div`
-  align-items: center;
+  align-items: start;
   background-repeat: no-repeat;
   background-position: top center;
   display: flex;
@@ -82,7 +82,7 @@ const Home: React.FC = () => {
     <>
       <Page>
         <Hero>
-          <Heading as="h1" size="xl" mb="24px" color="secondary">
+          <Heading as="h1" size="lg" mb="24px" color="text">
             {TranslateString(576, '123swap')}
           </Heading>
           <Text>{TranslateString(578, 'The #123 AMM and yield farm on Binance Smart Chain.')}</Text>

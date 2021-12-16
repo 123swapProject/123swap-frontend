@@ -29,23 +29,27 @@ import Select, { OptionProps } from './components/Select/Select'
 const ControlContainer = styled.div`
   display: flex;
   width: 100%;
-  align-items: center;
   position: relative;
-
   justify-content: space-between;
   flex-direction: column;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     flex-direction: row;
-    flex-wrap: wrap;
-    padding: 16px 32px;
   }
+`
+const StyledWrapper = styled.div`
+    background: ${({ theme }) => theme.colors.secondBackground};
+    border: 1px solid #353945;
+    box-sizing: border-box;
+    border-radius: 16px;
+    padding: 40px;
 `
 
 const ToggleWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-left: 10px;
+  height: 28px;
 
   ${Text} {
     margin-left: 8px;
@@ -54,15 +58,15 @@ const ToggleWrapper = styled.div`
 
 const LabelWrapper = styled.div`
   > ${Text} {
-    font-size: 12px;
+    font-size: 14px;
   }
 `
 
 const FilterContainer = styled.div`
   display: flex;
+  flex: 1;
   align-items: center;
-  width: 100%;
-  padding: 8px 0px;
+  justify-content: flex-end;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     width: auto;
@@ -72,10 +76,10 @@ const FilterContainer = styled.div`
 
 const ViewControls = styled.div`
   flex-wrap: wrap;
+  flex: 0 0 60%;
   justify-content: space-between;
   display: flex;
   align-items: center;
-  width: 100%;
 
   > div {
     padding: 8px 0px;
@@ -95,19 +99,6 @@ const StyledImage = styled(Image)`
   margin-left: auto;
   margin-right: auto;
   margin-top: 58px;
-`
-
-const Header = styled.div`
-  padding: 32px 0px;
-  background: ${({ theme }) => theme.colors.gradients.bubblegum};
-
-  padding-left: 16px;
-  padding-right: 16px;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
 `
 
 const Farms: React.FC = () => {
@@ -292,60 +283,58 @@ const Farms: React.FC = () => {
 
   return (
     <>
-      <Header>
-        <Heading as="h1" size="xxl" color="secondary" mb="24px">
+      <Page style={{maxWidth: "760px"}}>
+        <Heading as="h1" size="lg" color="text" mb="5px" mt="50px">
           {TranslateString(674, 'Farms')}
         </Heading>
-        <Heading size="lg" color="text">
+        <Text mb="30px">
           {TranslateString(999, 'Stake Liquidity Pool (LP) tokens to earn.')}
-        </Heading>
-      </Header>
-      <Page>
-        <ControlContainer>
-          <ViewControls>
-            <ToggleView viewMode={viewMode} onToggle={(mode: ViewMode) => setViewMode(mode)} />
-            <ToggleWrapper>
-              <Toggle checked={stakedOnly} onChange={() => setStakedOnly(!stakedOnly)} scale="sm" />
-              <Text> {TranslateString(1116, 'Staked only')}</Text>
-            </ToggleWrapper>
-            <FarmTabButtons />
-          </ViewControls>
-          <FilterContainer>
-            <LabelWrapper>
-              <Text>SORT BY</Text>
-              <Select
-                options={[
-                  {
-                    label: 'Hot',
-                    value: 'hot',
-                  },
-                  {
-                    label: 'APR',
-                    value: 'apr',
-                  },
-                  {
-                    label: 'Multiplier',
-                    value: 'multiplier',
-                  },
-                  {
-                    label: 'Earned',
-                    value: 'earned',
-                  },
-                  {
-                    label: 'Liquidity',
-                    value: 'liquidity',
-                  },
-                ]}
-                onChange={handleSortOptionChange}
-              />
-            </LabelWrapper>
-            <LabelWrapper style={{ marginLeft: 16 }}>
-              <Text>SEARCH</Text>
-              <SearchInput onChange={handleChangeQuery} value={query} />
-            </LabelWrapper>
-          </FilterContainer>
-        </ControlContainer>
-        {renderContent()}
+        </Text>
+         <StyledWrapper>
+            <ControlContainer>
+              <ViewControls>
+                <ToggleView viewMode={viewMode} onToggle={(mode: ViewMode) => setViewMode(mode)} />
+                <ToggleWrapper>
+                  <Toggle checked={stakedOnly} onChange={() => setStakedOnly(!stakedOnly)} scale="sm" />
+                  <Text color="textMenu" style={{fontSize: "14px"}}> {TranslateString(1116, 'Staked only')}</Text>
+                </ToggleWrapper>
+                <FarmTabButtons />
+              </ViewControls>
+              <FilterContainer>
+                <LabelWrapper>
+                  <Select
+                    options={[
+                      {
+                        label: 'Hot',
+                        value: 'hot',
+                      },
+                      {
+                        label: 'APR',
+                        value: 'apr',
+                      },
+                      {
+                        label: 'Multiplier',
+                        value: 'multiplier',
+                      },
+                      {
+                        label: 'Earned',
+                        value: 'earned',
+                      },
+                      {
+                        label: 'Liquidity',
+                        value: 'liquidity',
+                      },
+                    ]}
+                    onChange={handleSortOptionChange}
+                  />
+                </LabelWrapper>
+                <LabelWrapper>
+                  <SearchInput onChange={handleChangeQuery} value={query} />
+                </LabelWrapper>
+              </FilterContainer>
+            </ControlContainer>
+            {renderContent()}
+          </StyledWrapper>
       </Page>
     </>
   )
