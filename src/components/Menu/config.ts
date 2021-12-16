@@ -34,7 +34,11 @@ const config: MenuEntry[] = [
             },
         ]
     },
-
+    {
+        label: "123tokensale",
+        icon: "IfoIcon",
+        href: "https://exchange.123swap.finance/#/tokensale",
+    },
     {
         label: "123bridge",
         icon: "BridgeIcon",
@@ -43,11 +47,6 @@ const config: MenuEntry[] = [
     {
         label: "123nft",
         icon: "NftIcon",
-        href: "#",
-    },
-    {
-        label: "123lend&borrow",
-        icon: "BorrowIcon",
         href: "#",
     },
     {

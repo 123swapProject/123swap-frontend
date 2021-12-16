@@ -18,6 +18,7 @@ import RegisterModal from '../RegisterModal'
 import ClaimModal from '../ClaimModal'
 import { Heading2Text } from '../CompetitionHeadingText'
 import { CompetitionProps } from '../../types'
+import useNetwork from "../../../../hooks/useNetwork";
 
 const StyledCard = styled(Card)`
   display: inline-flex;
@@ -63,7 +64,8 @@ const BattleCta: React.FC<CompetitionProps> = ({
 }) => {
   const TranslateString = useI18n()
   const { login, logout } = useAuth()
-  const { onPresentConnectModal } = useWalletModal(login, logout)
+  const { network, setNetwork } = useNetwork()
+  const { onPresentConnectModal } = useWalletModal(login, logout, network, setNetwork)
   const [onPresentRegisterModal] = useModal(
     <RegisterModal profile={profile} onRegisterSuccess={onRegisterSuccess} />,
     false,

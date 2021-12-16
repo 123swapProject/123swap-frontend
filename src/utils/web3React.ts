@@ -4,6 +4,7 @@ import { BscConnector } from '@binance-chain/bsc-connector'
 import { ConnectorNames } from '@123swap/uikit'
 import Web3 from 'web3'
 import getNodeUrl from './getRpcUrl'
+import {ALL_SUPPORTED_CHAIN_IDS} from "../config/constants/chains";
 
 const POLLING_INTERVAL = 12000
 const rpcUrl = getNodeUrl()
@@ -18,12 +19,18 @@ const walletconnect = new WalletConnectConnector({
   pollingInterval: POLLING_INTERVAL,
 })
 
+export const injectedUni = new InjectedConnector({
+  supportedChainIds: ALL_SUPPORTED_CHAIN_IDS,
+})
+
 const bscConnector = new BscConnector({ supportedChainIds: [chainId] })
 
 export const connectorsByName: { [connectorName in ConnectorNames]: any } = {
   [ConnectorNames.Injected]: injected,
   [ConnectorNames.WalletConnect]: walletconnect,
   [ConnectorNames.BSC]: bscConnector,
+  [ConnectorNames.InjectedUni]: injectedUni,
+  [ConnectorNames.WalletConnectUni]: walletconnect,
 }
 
 export const getLibrary = (provider): Web3 => {
