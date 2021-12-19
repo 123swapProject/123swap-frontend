@@ -74,64 +74,69 @@ const Staked: React.FunctionComponent<FarmWithStakedValue> = ({ pid, lpSymbol, l
   margin-left: 10px;
   height: 70px;
 `
+const StyledActionTitles = styled(ActionTitles)`
+  & span {
+  color: ${({ theme }) => theme.colors.textMenu};
+  }
+`
 
   if (!account) {
     return (
-      <ActionContainer>
-        <ActionTitles>
-          <Subtle>{TranslateString(999, 'START FARMING')}</Subtle>
-        </ActionTitles>
+      <StyledActionContainer>
+        <StyledActionTitles>
+          <Subtle>{TranslateString(999, 'Start farming')}</Subtle>
+        </StyledActionTitles>
         <ActionContent>
-          <UnlockButton width="100%" />
+          <UnlockButton width="100%" padding="0" height="28px" />
         </ActionContent>
-      </ActionContainer>
+      </StyledActionContainer>
     )
   }
 
   if (isApproved) {
     if (rawStakedBalance) {
       return (
-        <ActionContainer>
-          <ActionTitles>
+        <StyledActionContainer>
+          <StyledActionTitles>
             <Title>{lpSymbol} </Title>
-            <Subtle>{TranslateString(999, 'STAKED')}</Subtle>
-          </ActionTitles>
+            <Subtle>{TranslateString(999, 'Staked')}</Subtle>
+          </StyledActionTitles>
           <ActionContent>
             <div>
               <Earned>{displayBalance}</Earned>
             </div>
             <IconButtonWrapper>
-              <IconButton variant="primary" onClick={onPresentWithdraw} mr="6px">
+              <IconButton variant="primary" onClick={onPresentWithdraw} mr="6px" padding="0" height="28px">
                 <MinusIcon color="primary" width="14px" />
               </IconButton>
-              <IconButton variant="primary" onClick={onPresentDeposit}>
+              <IconButton variant="primary" onClick={onPresentDeposit} padding="0" height="28px">
                 <AddIcon color="primary" width="14px" />
               </IconButton>
             </IconButtonWrapper>
           </ActionContent>
-        </ActionContainer>
+        </StyledActionContainer>
       )
     }
 
     return (
-      <ActionContainer>
-        <ActionTitles>
-          <Subtle>{TranslateString(999, 'STAKE')} </Subtle>
+      <StyledActionContainer>
+        <StyledActionTitles>
+          <Subtle>{TranslateString(999, 'Stake')} </Subtle>
           <Title>{lpSymbol}</Title>
-        </ActionTitles>
+        </StyledActionTitles>
         <ActionContent>
-          <Button width="100%" onClick={onPresentDeposit} variant="primary">
+          <Button width="100%" onClick={onPresentDeposit} variant="primary" padding="0" height="28px">
             {TranslateString(999, 'Stake LP')}
           </Button>
         </ActionContent>
-      </ActionContainer>
+      </StyledActionContainer>
     )
   }
 
   return (
     <StyledActionContainer>
       <ActionTitles>
-        <Subtle>{TranslateString(999, 'ENABLE FARM')}</Subtle>
+        <Subtle>{TranslateString(999, 'Enable farm')}</Subtle>
       </ActionTitles>
       <ActionContent>
         <StyledButton width="100%" disabled={requestedApproval} onClick={handleApprove} variant="primary">

@@ -60,13 +60,14 @@ const StyledCardAccent = styled.div`
 
 const FCard = styled.div`
   align-self: baseline;
-  background: ${(props) => props.theme.card.background};
-  border-radius: 32px;
-  box-shadow: 0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05);
+  border-radius: 16px;
+  background: ${({ theme }) => theme.colors.secondBackground};
+  box-shadow: ${({ theme }) => (theme.isDark ? 'none' : '0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05);')};
+  border: solid 1px ${({ theme }) => (theme.isDark ? '#353945' : 'transparent')};
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 24px;
+  padding: 20px;
   position: relative;
   text-align: center;
 `
@@ -129,8 +130,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
       />
       {!removed && (
         <Flex justifyContent="space-between" alignItems="center">
-          <Text>{TranslateString(736, 'APR')}:</Text>
-          <Text bold style={{ display: 'flex', alignItems: 'center' }}>
+          <Text color="textMenu" fontSize="12px">{TranslateString(736, 'APR')}:</Text>
+          <Text bold style={{ display: 'flex', alignItems: 'center', fontSize: "12px" }}>
             {farm.apy ? (
               <>
                 <ApyButton lpLabel={lpLabel} addLiquidityUrl={addLiquidityUrl} cakePrice={cakePrice} apy={farm.apy} />
@@ -143,8 +144,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
         </Flex>
       )}
       <Flex justifyContent="space-between">
-        <Text>{TranslateString(318, 'Earn')}:</Text>
-        <Text bold>{earnLabel}</Text>
+        <Text color="textMenu" fontSize="12px">{TranslateString(318, 'Earn')}:</Text>
+        <Text fontSize="12px">{earnLabel}</Text>
       </Flex>
       <CardActionsContainer farm={farm} account={account} addLiquidityUrl={addLiquidityUrl} />
       <Divider />

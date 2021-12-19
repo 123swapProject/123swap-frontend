@@ -18,6 +18,12 @@ const Wrapper = styled.div`
 
 const StyledLinkExternal = styled(LinkExternal)`
   font-weight: 400;
+  font-size: 12px;
+  color: ${({ theme }) => theme.colors.text};
+  & svg {
+    height: 15px;
+    margin-bottom: 2px;
+  }
 `
 
 const DetailsSection: React.FC<ExpandableSectionProps> = ({
@@ -33,7 +39,7 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
   return (
     <Wrapper>
       <Flex justifyContent="space-between">
-        <Text>{TranslateString(354, 'Total Liquidity')}:</Text>
+        <Text bold fontSize="14px" color="textMenu">{TranslateString(354, 'Total')}</Text>
         <Text>{totalValueFormatted}</Text>
       </Flex>
       {!removed && (

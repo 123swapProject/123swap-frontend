@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
 import { Button, Flex, Heading } from '@123swap/uikit'
 import useI18n from 'hooks/useI18n'
@@ -20,10 +21,15 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
   const rawEarningsBalance = account ? getBalanceNumber(earnings) : 0
   const displayBalance = rawEarningsBalance.toLocaleString()
 
+  const StyledButton = styled(Button)`
+    padding: 4px 30px;
+    height: 29px;
+  `
+
   return (
     <Flex mb="8px" justifyContent="space-between" alignItems="center">
       <Heading color={rawEarningsBalance === 0 ? 'textDisabled' : 'text'}>{displayBalance}</Heading>
-      <Button
+      <StyledButton
         disabled={rawEarningsBalance === 0 || pendingTx}
         onClick={async () => {
           setPendingTx(true)
@@ -32,7 +38,7 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
         }}
       >
         {TranslateString(562, 'Harvest')}
-      </Button>
+      </StyledButton>
     </Flex>
   )
 }

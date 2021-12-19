@@ -16,6 +16,14 @@ import HarvestAction from './HarvestAction'
 const Action = styled.div`
   padding-top: 16px;
 `
+const StyledText = styled(Text)`
+  font-size: 12px;
+  font-weight: bold;
+  background: -webkit-linear-gradient(109.32deg, #EB5757 -12.08%, #F2C94C 58.46%, #F2994A 127.54%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`
+
 export interface FarmWithStakedValue extends Farm {
   apy?: number
 }
@@ -69,23 +77,23 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, account, addLiquidi
 
   return (
     <Action>
-      <Flex>
-        <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="3px">
+      <Flex pb="15px">
+        <StyledText textTransform="uppercase" pr="3px">
           {/* TODO: Is there a way to get a dynamic value here from useFarmFromSymbol? */}
           CAKE
-        </Text>
-        <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+        </StyledText>
+        <StyledText>
           {TranslateString(1072, 'Earned')}
-        </Text>
+        </StyledText>
       </Flex>
-      <HarvestAction earnings={earnings} pid={pid} />
-      <Flex>
-        <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="3px">
+      <HarvestAction earnings={earnings} pid={pid}/>
+      <Flex pb="10px">
+        <StyledText bold textTransform="uppercase" pr="3px">
           {lpName}
-        </Text>
-        <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+        </StyledText>
+        <StyledText>
           {TranslateString(1074, 'Staked')}
-        </Text>
+        </StyledText>
       </Flex>
       {!account ? <UnlockButton mt="8px" width="100%" /> : renderApprovalOrStakeButton()}
     </Action>

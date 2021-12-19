@@ -38,7 +38,6 @@ const CellInner = styled.div`
   width: 100%;
   align-items: center;
   padding-right: 8px;
-  border-bottom: solid 1px ${({ theme }) => theme.colors.borderColor};
 
   ${({ theme }) => theme.mediaQueries.xl} {
     padding-right: 32px;
@@ -47,6 +46,10 @@ const CellInner = styled.div`
 
 const StyledTr = styled.tr`
   cursor: pointer;
+`
+
+const StyledTd = styled.td`
+  border-bottom: solid 1px ${({ theme }) => theme.colors.borderColor};
 `
 
 const EarnedMobileCell = styled.td`
@@ -90,27 +93,27 @@ const Row: React.FunctionComponent<RowProps> = (props) => {
             switch (key) {
               case 'details':
                 return (
-                  <td key={key}>
+                  <StyledTd key={key}>
                     <CellInner>
                       <CellLayout>
                         <Details actionPanelToggled={actionPanelToggled} />
                       </CellLayout>
                     </CellInner>
-                  </td>
+                  </StyledTd>
                 )
               case 'apr':
                 return (
-                  <td key={key}>
+                  <StyledTd key={key}>
                     <CellInner>
                       <CellLayout label={TranslateString(736, 'APR')}>
                         <Apr {...props.apr} hideButton={isMobile} />
                       </CellLayout>
                     </CellInner>
-                  </td>
+                  </StyledTd>
                 )
               default:
                 return (
-                  <td key={key}>
+                  <StyledTd key={key}>
                     <CellInner>
                       <CellLayout
                         label={TranslateString(tableSchema[columnIndex].translationId, tableSchema[columnIndex].label)}
@@ -118,7 +121,7 @@ const Row: React.FunctionComponent<RowProps> = (props) => {
                         {React.createElement(cells[key], props[key])}
                       </CellLayout>
                     </CellInner>
-                  </td>
+                  </StyledTd>
                 )
             }
           })}
@@ -128,7 +131,7 @@ const Row: React.FunctionComponent<RowProps> = (props) => {
 
     return (
       <StyledTr onClick={toggleActionPanel}>
-        <td>
+        <StyledTd>
           <tr>
             <FarmMobileCell>
               <CellLayout>
@@ -148,14 +151,14 @@ const Row: React.FunctionComponent<RowProps> = (props) => {
               </CellLayout>
             </AprMobileCell>
           </tr>
-        </td>
-        <td>
+        </StyledTd>
+        <StyledTd>
           <CellInner>
             <CellLayout>
               <Details actionPanelToggled={actionPanelToggled} />
             </CellLayout>
           </CellInner>
-        </td>
+        </StyledTd>
       </StyledTr>
     )
   }
@@ -165,9 +168,9 @@ const Row: React.FunctionComponent<RowProps> = (props) => {
       {handleRenderRow()}
       {actionPanelToggled && details && (
         <tr>
-          <td colSpan={6}>
+          <StyledTd colSpan={6}>
             <ActionPanel {...props} />
-          </td>
+          </StyledTd>
         </tr>
       )}
     </>

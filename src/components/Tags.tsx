@@ -5,7 +5,10 @@ import { Tag, VerifiedIcon, CommunityIcon, BinanceIcon } from '@123swap/uikit'
 const StyledTag = styled(Tag)`
   border: solid 1px #EB5757;
   color: #EB5757;
-  font-size: 10px;
+  font-size: 10px !important;
+  & svg {
+    height: 14px;
+  }
 `
 
 

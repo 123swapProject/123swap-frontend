@@ -8,8 +8,9 @@ import CardTitle from './CardTitle'
 
 const Balance = styled.div`
   color: ${({ theme }) => theme.colors.text};
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 600;
+  padding-top: 10px;
 `
 
 const Label = styled.div`
@@ -22,11 +23,12 @@ const Label = styled.div`
 
 const DetailPlaceholder = styled.div`
   display: flex;
-  font-size: 14px;
+  font-size: 12px;
+  color: ${({ theme }) => theme.colors.textMenu};
 `
 const Value = styled.div`
   color: ${({ theme }) => theme.colors.text};
-  font-size: 14px;
+  font-size: 12px;
 `
 
 const Footer = styled.div`
@@ -65,7 +67,7 @@ const Coming: React.FC = () => {
         </DetailPlaceholder>
         <DetailPlaceholder>
           <div style={{ flex: 1 }}>
-            {TranslateString(384, 'Your Stake')}:
+            {TranslateString(384, 'Your Stake')}
           </div>
           <Value>??? 123b</Value>
         </DetailPlaceholder>
