@@ -46,7 +46,7 @@ const HarvestAction: React.FunctionComponent<FarmWithStakedValue> = ({ pid, user
   const StyledButton = styled(Button)`
     height: 28px; 
     padding: 0 30px;
-    background: ${({ theme }) => theme.colors.textMenu};
+    background: ${({ theme }) => theme.colors.textMenu} !important;
     border-radius: 4px;
     color: ${({ theme }) => theme.colors.inputSecondary} !important;
   `
