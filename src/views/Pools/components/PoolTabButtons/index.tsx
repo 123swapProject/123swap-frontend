@@ -42,7 +42,7 @@ const StyledButtonMenuWrapper = styled.div`
   border-radius: 50px;
   padding: 2px;
   & a {
-    color: ${({ theme }) => theme.colors.textMenu};
+    color: ${({ theme }) => theme.colors.contrast};
     font-size: 14px;
     padding: 0px 10px;
     height: 24px;

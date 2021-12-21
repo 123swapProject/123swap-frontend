@@ -46,8 +46,9 @@ const HarvestAction: React.FunctionComponent<FarmWithStakedValue> = ({ pid, user
   const StyledButton = styled(Button)`
     height: 28px; 
     padding: 0 30px;
-    background: ${({ theme }) => theme.colors.textMenu};
+    background: ${({ theme }) => theme.colors.textMenu} !important;
     border-radius: 4px;
+    color: ${({ theme }) => theme.colors.inputSecondary} !important;
   `
   const StyledActionContainer = styled(ActionContainer)`
     border: solid 1px ${({ theme }) => theme.colors.textMenu};
@@ -55,13 +56,18 @@ const HarvestAction: React.FunctionComponent<FarmWithStakedValue> = ({ pid, user
     padding: 8px;
     margin-left: 0;
   `
+  const StyledActionTitles = styled(ActionTitles)`
+    & span {
+      color: ${({ theme }) => theme.colors.textMenu};
+    }
+  `
 
   return (
     <StyledActionContainer>
-      <ActionTitles>
+      <StyledActionTitles>
         <Title>123b </Title>
         <Subtle>{TranslateString(1072, 'EARNED')}</Subtle>
-      </ActionTitles>
+      </StyledActionTitles>
       <ActionContent>
         <div>
           <Earned>{displayBalance}</Earned>

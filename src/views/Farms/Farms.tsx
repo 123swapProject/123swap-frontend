@@ -39,10 +39,17 @@ const ControlContainer = styled.div`
 `
 const StyledWrapper = styled.div`
     background: ${({ theme }) => theme.colors.secondBackground};
-    border: 1px solid #353945;
+    border: 1px solid ${({ theme }) => theme.colors.borderColor};
     box-sizing: border-box;
     border-radius: 16px;
     padding: 40px;
+
+`
+
+const FlexLayoutWrapper = styled.div`
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: solid 1px ${({ theme }) => theme.colors.borderColor};
 `
 
 const ToggleWrapper = styled.div`
@@ -260,7 +267,7 @@ const Farms: React.FC = () => {
     }
 
     return (
-      <div>
+      <FlexLayoutWrapper>
         <FlexLayout>
           <Route exact path={`${path}`}>
             {farmsStaked.map((farm) => (
@@ -273,7 +280,7 @@ const Farms: React.FC = () => {
             ))}
           </Route>
         </FlexLayout>
-      </div>
+      </FlexLayoutWrapper>
     )
   }
 
@@ -283,7 +290,7 @@ const Farms: React.FC = () => {
 
   return (
     <>
-      <Page style={{maxWidth: "760px"}}>
+      <Page>
         <Heading as="h1" size="lg" color="text" mb="5px" mt="50px">
           {TranslateString(674, 'Farms')}
         </Heading>

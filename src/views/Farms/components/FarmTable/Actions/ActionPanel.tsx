@@ -21,11 +21,13 @@ export interface ActionPanelProps {
 }
 
 const Container = styled.div`
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.inputSecondary};
   display: flex;
   width: 100%;
   flex-direction: column-reverse;
   padding: 14px;
+  margin-top: 10px;
+  border-radius: 8px;
 
   ${({ theme }) => theme.mediaQueries.lg} {
     flex-direction: row;
@@ -35,6 +37,16 @@ const Container = styled.div`
 
 const StyledLinkExternal = styled(LinkExternal)`
   font-weight: 400;
+  font-size: 12px;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background: transparent;
+  color: ${({ theme }) => theme.colors.text};
+  & svg {
+    fill: ${({ theme }) => theme.colors.text};
+    height: 15px;
+    margin-bottom: 2px;
+  }
 `
 
 const StakeContainer = styled.div`
