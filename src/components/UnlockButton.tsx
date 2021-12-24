@@ -10,11 +10,6 @@ padding: 4px 30px;
 height: 29px;
 `
 
-const StyledButton = styled(Button)`
-padding: 4px 30px;
-height: 29px;
-`
-
 const UnlockButton = (props) => {
   const TranslateString = useI18n()
   const { login, logout } = useAuth()
