@@ -181,8 +181,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
                 </Button>
                 <StyledActionSpacer />
                 {!isOldSyrup && (
-                  <IconButton disabled={isFinished && sousId !== 0} onClick={onPresentDeposit}>
-                    <AddIcon color="white" />
+                  <IconButton ml="5px" disabled={isFinished && sousId !== 0} onClick={onPresentDeposit}>
+                    <AddIcon m="0 10px" color="white" />
                   </IconButton>
                 )}
               </>

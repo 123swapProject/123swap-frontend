@@ -12,18 +12,30 @@ const StyledNotFound = styled.div`
   justify-content: center;
 `
 
+const StyledWrapper = styled.div`
+  background: ${({ theme }) => theme.colors.secondBackground};
+  border: 1px solid ${({ theme }) => theme.colors.borderColor};
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 40px;
+  min-width: 350px;
+`
+
 const NotFound = () => {
   const TranslateString = useI18n()
 
   return (
     <Page>
+      
       <StyledNotFound>
+        <StyledWrapper>
         <LogoIcon width="64px" mb="8px" />
         <Heading size="xxl">404</Heading>
         <Text mb="16px">{TranslateString(1122, 'Oops, page not found.')}</Text>
         <Button as="a" href="/" scale="sm">
           {TranslateString(1124, 'Back Home')}
         </Button>
+        </StyledWrapper>
       </StyledNotFound>
     </Page>
   )
